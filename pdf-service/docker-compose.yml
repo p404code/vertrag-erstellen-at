@@ -1,0 +1,16 @@
+services:
+  vertrag-pdf-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vertrag-pdf-service:latest
+    container_name: vertrag-pdf-service
+    restart: unless-stopped
+    environment:
+      - PORT=3000
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
