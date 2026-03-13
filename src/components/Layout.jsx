@@ -52,26 +52,35 @@ export default function Layout() {
         <div className="max-w-3xl mx-auto px-4 py-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <div className="flex items-center mb-1">
+              <div className="flex items-center mb-2">
                 <span className="font-bold text-white">vertrag-erstellen</span>
                 <span className="font-bold text-brand-red">.at</span>
               </div>
-              <p className="text-xs text-blue-200">
-                Ein Projekt von{' '}
-                <a
-                  href="https://evrobo.dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:underline font-medium"
-                >
-                  EVROBO
-                </a>
+              <p className="text-xs text-blue-200 mb-4">
+                Ein Projekt gebaut, deployt und
               </p>
+              <a
+                href="https://evrobo.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="evrobo-btn-dark"
+              >
+                <svg width="28" height="28" viewBox="0 0 100 100" flexShrink="0">
+                  <polygon points="50,2 93,27 93,73 50,98 7,73 7,27" fill="#8A9BB5" opacity="0.7"/>
+                  <polygon points="50,8 88,30 88,70 50,92 12,70 12,30" fill="#7B8FA8"/>
+                  <polygon points="50,92 12,70 12,55 50,77 88,55 88,70" fill="#1B3A5C"/>
+                  <path d="M38,35 L58,35 L58,42 L46,42 L46,46 L56,46 L56,53 L46,53 L46,57 L58,57 L58,64 L38,64 Z" fill="white" opacity="0.9"/>
+                  <path d="M52,44 L65,50 L52,56 Z" fill="white" opacity="0.85"/>
+                </svg>
+                <span className="evrobo-btn-dark__label">
+                  <span className="evrobo-btn-dark__top">Powered by</span>
+                  <span className="evrobo-btn-dark__brand">EVROBO</span>
+                </span>
+              </a>
             </div>
 
             <nav className="flex items-center divide-x divide-blue-700 text-xs text-blue-300">
-              <Link to="/impressum" className="hover:text-white transition-colors pr-3">Impressum</Link>
-              <Link to="/datenschutz" className="hover:text-white transition-colors px-3">Datenschutz</Link>
+              <Link to="/datenschutz" className="hover:text-white transition-colors pr-3">Datenschutz</Link>
               <span className="pl-3 text-blue-400">© 2026</span>
             </nav>
           </div>
