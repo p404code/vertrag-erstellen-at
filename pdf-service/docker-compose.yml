@@ -3,7 +3,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: vertrag-pdf-service:latest
     container_name: vertrag-pdf-service
     restart: unless-stopped
     ports:
