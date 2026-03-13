@@ -1,0 +1,16 @@
+services:
+  nginx-static:
+    image: nginx:alpine
+    container_name: vertrag-erstellen-frontend
+    restart: unless-stopped
+    volumes:
+      - ./dist:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "8080:80"    # nginx-proxy-manager zeigt auf diesen Port
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true   # dasselbe Netzwerk wie nginx-proxy-manager

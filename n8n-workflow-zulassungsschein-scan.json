@@ -1,0 +1,112 @@
+{
+  "name": "Zulassungsschein Scan – vertrag-erstellen.at",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "scan-zulassungsschein",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "https://vertrag-erstellen.at,http://localhost:5173"
+        }
+      },
+      "id": "a1b2c3d4-0001-0001-0001-000000000001",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "scan-zulassungsschein"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1024,\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"image\",\n          \"source\": {\n            \"type\": \"base64\",\n            \"media_type\": \"{{ $json.body.mediaType || 'image/jpeg' }}\",\n            \"data\": \"{{ $json.body.imageBase64 }}\"\n          }\n        },\n        {\n          \"type\": \"text\",\n          \"text\": \"Du siehst einen österreichischen Zulassungsschein (Kraftfahrzeugbrief). Extrahiere die folgenden Felder und gib NUR ein JSON-Objekt zurück, ohne zusätzlichen Text:\\n\\n{\\n  \\\"marke\\\": \\\"Hersteller/Marke (z.B. Volkswagen)\\\",\\n  \\\"modell\\\": \\\"Modell/Typ (z.B. Golf 1.6 TDI)\\\",\\n  \\\"kennzeichen\\\": \\\"amtliches Kennzeichen (z.B. W-12345A)\\\",\\n  \\\"erstzulassung\\\": \\\"Datum TT.MM.JJJJ\\\",\\n  \\\"fin\\\": \\\"Fahrgestellnummer/VIN (17 Zeichen)\\\",\\n  \\\"kraftstoff\\\": \\\"Kraftstoffart (Diesel/Benzin/Elektro/Hybrid)\\\",\\n  \\\"farbe\\\": \\\"Farbe des Fahrzeugs\\\",\\n  \\\"leistungKw\\\": \\\"Motorleistung in kW als Zahl ohne Einheit\\\"\\n}\\n\\nFalls ein Feld nicht lesbar ist, verwende einen leeren String.\"\n        }\n      ]\n    }\n  ]\n}",
+        "options": {}
+      },
+      "id": "a1b2c3d4-0001-0001-0001-000000000002",
+      "name": "Claude API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [460, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "REPLACE_WITH_CREDENTIAL_ID",
+          "name": "Anthropic API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\n\ntry {\n  const text = response.content[0].text;\n  // JSON aus der Antwort extrahieren\n  const jsonMatch = text.match(/\\{[\\s\\S]*\\}/);\n  if (!jsonMatch) throw new Error('Kein JSON in Antwort');\n  const parsed = JSON.parse(jsonMatch[0]);\n  return [{ json: parsed }];\n} catch (e) {\n  return [{ json: { error: 'Zulassungsschein konnte nicht gelesen werden. Bitte manuell ausfüllen.' } }];\n}"
+      },
+      "id": "a1b2c3d4-0001-0001-0001-000000000003",
+      "name": "Parse Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json) }}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "id": "a1b2c3d4-0001-0001-0001-000000000004",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [900, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [{ "node": "Claude API", "type": "main", "index": 0 }]
+      ]
+    },
+    "Claude API": {
+      "main": [
+        [{ "node": "Parse Response", "type": "main", "index": 0 }]
+      ]
+    },
+    "Parse Response": {
+      "main": [
+        [{ "node": "Respond to Webhook", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}
