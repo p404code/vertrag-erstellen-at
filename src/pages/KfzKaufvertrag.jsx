@@ -2,10 +2,9 @@ import { useState } from 'react'
 import ScanUpload from '../components/ScanUpload'
 
 const STEPS = [
-  { label: 'Fahrzeug', short: '1' },
-  { label: 'Parteien', short: '2' },
-  { label: 'Details',  short: '3' },
-  { label: 'PDF',      short: '4' },
+  { label: 'Fahrzeug & Verkäufer', short: '1' },
+  { label: 'Käufer & Details',     short: '2' },
+  { label: 'PDF',                  short: '3' },
 ]
 
 const INITIAL_FORM = {
@@ -18,8 +17,7 @@ const INITIAL_FORM = {
   farbe: '',
   leistungKw: '',
   kilometerstand: '',
-  verkaefer_vorname: '',
-  verkaefer_nachname: '',
+  verkaefer_name: '',
   verkaefer_adresse: '',
   verkaefer_geburtsdatum: '',
   kaeufer_vorname: '',
@@ -48,14 +46,16 @@ export default function KfzKaufvertrag() {
   function handleScanResult(data) {
     setForm(f => ({
       ...f,
-      kennzeichen:   data.kennzeichen   || f.kennzeichen,
-      marke:         data.marke         || f.marke,
-      modell:        data.modell        || f.modell,
-      fin:           data.fin           || f.fin,
-      erstzulassung: data.erstzulassung || f.erstzulassung,
-      kraftstoff:    data.kraftstoff    || f.kraftstoff,
-      farbe:         data.farbe         || f.farbe,
-      leistungKw:    data.leistungKw    || f.leistungKw,
+      kennzeichen:      data.kennzeichen      || f.kennzeichen,
+      marke:            data.marke            || f.marke,
+      modell:           data.modell           || f.modell,
+      fin:              data.fin              || f.fin,
+      erstzulassung:    data.erstzulassung    || f.erstzulassung,
+      kraftstoff:       data.kraftstoff       || f.kraftstoff,
+      farbe:            data.farbe            || f.farbe,
+      leistungKw:       data.leistungKw       || f.leistungKw,
+      verkaefer_name:    data.besitzer_name    || f.verkaefer_name,
+      verkaefer_adresse: data.besitzer_adresse || f.verkaefer_adresse,
     }))
     setStep(1)
   }
@@ -151,23 +151,20 @@ export default function KfzKaufvertrag() {
             <Field label="Leistung (kW)"  value={form.leistungKw}     onChange={v => set('leistungKw', v)}     placeholder="85" inputMode="numeric" />
             <Field label="Kilometerstand" value={form.kilometerstand} onChange={v => set('kilometerstand', v)} placeholder="85000" inputMode="numeric" />
           </div>
+          <div className="border-t border-line pt-4 space-y-3">
+            <p className="section-heading">Verkäufer / Zulassungsbesitzer</p>
+            <Field label="Name / Firmenname" value={form.verkaefer_name} onChange={v => set('verkaefer_name', v)} placeholder="Max Mustermann oder Musterfirma GmbH" />
+            <Field label="Adresse (Straße, PLZ Ort)" value={form.verkaefer_adresse} onChange={v => set('verkaefer_adresse', v)} placeholder="Grillgasse 51/201, 1110 Wien" />
+            <Field label="Geburtsdatum (bei Privatperson, optional bei Firma)" value={form.verkaefer_geburtsdatum} onChange={v => set('verkaefer_geburtsdatum', v)} placeholder="TT.MM.JJJJ" />
+          </div>
+
           <StepNav onBack={() => setStep(0)} onNext={() => setStep(2)} />
         </div>
       )}
 
-      {/* ── SCHRITT 2: Parteien ── */}
+      {/* ── SCHRITT 2: Käufer & Details ── */}
       {step === 2 && (
         <div className="card space-y-5">
-          <div>
-            <p className="section-heading">Verkäufer/in</p>
-            <div className="grid grid-cols-2 gap-3 mb-3">
-              <Field label="Vorname"  value={form.verkaefer_vorname}  onChange={v => set('verkaefer_vorname', v)} />
-              <Field label="Nachname" value={form.verkaefer_nachname} onChange={v => set('verkaefer_nachname', v)} />
-            </div>
-            <Field label="Adresse (Straße, PLZ Ort)" value={form.verkaefer_adresse}      onChange={v => set('verkaefer_adresse', v)}      className="mb-3" />
-            <Field label="Geburtsdatum"              value={form.verkaefer_geburtsdatum} onChange={v => set('verkaefer_geburtsdatum', v)} placeholder="TT.MM.JJJJ" />
-          </div>
-
           <div>
             <p className="section-heading">Käufer/in</p>
             <div className="grid grid-cols-2 gap-3 mb-3">
@@ -178,72 +175,67 @@ export default function KfzKaufvertrag() {
             <Field label="Geburtsdatum"              value={form.kaeufer_geburtsdatum} onChange={v => set('kaeufer_geburtsdatum', v)} placeholder="TT.MM.JJJJ" />
           </div>
 
+          <div className="border-t border-line pt-4 space-y-4">
+            <p className="section-heading">Kaufpreis &amp; Zahlung</p>
+
+            <Field label="Kaufpreis (EUR)" value={form.kaufpreis} onChange={v => set('kaufpreis', v)} placeholder="5000" inputMode="numeric" />
+
+            <div>
+              <label className="label">Zahlungsart</label>
+              <select
+                value={form.zahlungsart}
+                onChange={e => set('zahlungsart', e.target.value)}
+                className="input-field"
+              >
+                <option>Barzahlung</option>
+                <option>Überweisung</option>
+                <option>Barzahlung bei Übergabe</option>
+              </select>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              <Field label="Übergabedatum" value={form.uebergabedatum} onChange={v => set('uebergabedatum', v)} placeholder="TT.MM.JJJJ" />
+              <Field label="Ort"           value={form.ort}            onChange={v => set('ort', v)}            placeholder="Wien" />
+            </div>
+
+            <div className="border-t border-line pt-4">
+              <p className="text-xs font-semibold tracking-widest uppercase text-brand-dark mb-3">
+                Gewährleistung
+              </p>
+              <label className="flex items-start gap-3 cursor-pointer p-3 bg-brand-light border border-brand-mid/20 rounded-md">
+                <input
+                  type="checkbox"
+                  checked={form.gewährleistung_ausgeschlossen}
+                  onChange={e => set('gewährleistung_ausgeschlossen', e.target.checked)}
+                  className="mt-0.5 h-4 w-4 rounded accent-brand-dark flex-shrink-0"
+                />
+                <span className="text-sm text-brand-dark">
+                  <strong>Gewährleistung ausschließen</strong>
+                  <span className="block text-xs text-gray-500 mt-0.5 font-normal">
+                    Empfohlen bei Privatverkäufen – gemäß § 929 ABGB zulässig
+                  </span>
+                </span>
+              </label>
+            </div>
+
+            <div>
+              <label className="label">Bekannte Mängel (optional)</label>
+              <textarea
+                value={form.bekannte_maengel}
+                onChange={e => set('bekannte_maengel', e.target.value)}
+                placeholder="z.B. Kratzer an der Heckstoßstange, Klimaanlage defekt…"
+                rows={3}
+                className="input-field resize-none"
+              />
+            </div>
+          </div>
+
           <StepNav onBack={() => setStep(1)} onNext={() => setStep(3)} />
         </div>
       )}
 
-      {/* ── SCHRITT 3: Details ── */}
+      {/* ── SCHRITT 3: PDF ── */}
       {step === 3 && (
-        <div className="card space-y-4">
-          <p className="section-heading">Kaufpreis &amp; Zahlung</p>
-
-          <Field label="Kaufpreis (EUR)" value={form.kaufpreis} onChange={v => set('kaufpreis', v)} placeholder="5000" inputMode="numeric" />
-
-          <div>
-            <label className="label">Zahlungsart</label>
-            <select
-              value={form.zahlungsart}
-              onChange={e => set('zahlungsart', e.target.value)}
-              className="input-field"
-            >
-              <option>Barzahlung</option>
-              <option>Überweisung</option>
-              <option>Barzahlung bei Übergabe</option>
-            </select>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3">
-            <Field label="Übergabedatum" value={form.uebergabedatum} onChange={v => set('uebergabedatum', v)} placeholder="TT.MM.JJJJ" />
-            <Field label="Ort"           value={form.ort}            onChange={v => set('ort', v)}            placeholder="Wien" />
-          </div>
-
-          <div className="border-t-2 border-brand-red pt-4">
-            <p className="text-xs font-semibold tracking-widest uppercase text-brand-dark mb-3">
-              Gewährleistung
-            </p>
-            <label className="flex items-start gap-3 cursor-pointer p-3 bg-brand-light border border-brand-mid/20 rounded-md">
-              <input
-                type="checkbox"
-                checked={form.gewährleistung_ausgeschlossen}
-                onChange={e => set('gewährleistung_ausgeschlossen', e.target.checked)}
-                className="mt-0.5 h-4 w-4 rounded accent-brand-dark flex-shrink-0"
-              />
-              <span className="text-sm text-brand-dark">
-                <strong>Gewährleistung ausschließen</strong>
-                <span className="block text-xs text-gray-500 mt-0.5 font-normal">
-                  Empfohlen bei Privatverkäufen – gemäß § 929 ABGB zulässig
-                </span>
-              </span>
-            </label>
-          </div>
-
-          <div>
-            <label className="label">Bekannte Mängel (optional)</label>
-            <textarea
-              value={form.bekannte_maengel}
-              onChange={e => set('bekannte_maengel', e.target.value)}
-              placeholder="z.B. Kratzer an der Heckstoßstange, Klimaanlage defekt…"
-              rows={3}
-              className="input-field resize-none"
-            />
-          </div>
-
-          <StepNav onBack={() => setStep(2)} onNext={() => setStep(4)} />
-        </div>
-      )}
-
-      {/* ── SCHRITT 4: PDF ── */}
-      {step === 4 && (
         <div className="space-y-4">
           <div className="card">
             <p className="section-heading">Zusammenfassung</p>
@@ -284,7 +276,7 @@ export default function KfzKaufvertrag() {
           </div>
 
           <button
-            onClick={() => setStep(3)}
+            onClick={() => setStep(2)}
             className="text-sm text-gray-500 w-full text-center py-2 hover:text-brand-dark transition-colors"
           >
             ← Zurück zum Bearbeiten
