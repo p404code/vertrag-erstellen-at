@@ -192,10 +192,12 @@
   </div>
   <div class="sig-block">
     <div class="sig-label">Unterschrift Verkäufer/in</div>
+    {{#if verkaefer_signature}}<img src="{{verkaefer_signature}}" style="height:40px;max-width:160px;display:block;margin-bottom:3px;" />{{/if}}
     <div class="sig-line">{{verkaefer_name}}</div>
   </div>
   <div class="sig-block">
     <div class="sig-label">Unterschrift Käufer/in</div>
+    {{#if kaeufer_signature}}<img src="{{kaeufer_signature}}" style="height:40px;max-width:160px;display:block;margin-bottom:3px;" />{{/if}}
     <div class="sig-line">{{kaeufer_vorname}} {{kaeufer_nachname}}</div>
   </div>
 </div>

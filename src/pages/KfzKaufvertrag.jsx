@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ScanUpload from '../components/ScanUpload'
+import SignatureCanvas from '../components/SignatureCanvas'
 
 const STEPS = [
   { label: 'Fahrzeug & Verkäufer', short: '1' },
@@ -26,6 +27,8 @@ const INITIAL_FORM = {
   kaeufer_geburtsdatum: '',
   kaufpreis: '',
   zahlungsart: 'Barzahlung',
+  verkaefer_signature: '',
+  kaeufer_signature: '',
   uebergabedatum: '',
   ort: '',
   datum: new Date().toLocaleDateString('de-AT'),
@@ -246,6 +249,24 @@ export default function KfzKaufvertrag() {
               <SummaryRow label="Kaufpreis"     value={form.kaufpreis ? `EUR ${form.kaufpreis},–` : '–'} />
               <SummaryRow label="Übergabe"      value={form.uebergabedatum || '–'} />
               <SummaryRow label="Gewährleistung" value={form.gewährleistung_ausgeschlossen ? 'Ausgeschlossen (§ 929 ABGB)' : 'Gesetzlich'} />
+            </div>
+
+            <div className="border-t border-line pt-4 space-y-5">
+              <p className="section-heading">Unterschriften</p>
+              <div>
+                <label className="label">Unterschrift Verkäufer/in</label>
+                <SignatureCanvas
+                  onSigned={b64 => set('verkaefer_signature', b64)}
+                  onClear={() => set('verkaefer_signature', '')}
+                />
+              </div>
+              <div>
+                <label className="label">Unterschrift Käufer/in</label>
+                <SignatureCanvas
+                  onSigned={b64 => set('kaeufer_signature', b64)}
+                  onClear={() => set('kaeufer_signature', '')}
+                />
+              </div>
             </div>
 
             {pdfError && (
