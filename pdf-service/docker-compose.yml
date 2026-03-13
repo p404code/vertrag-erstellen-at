@@ -6,11 +6,7 @@ services:
     image: vertrag-pdf-service:latest
     container_name: vertrag-pdf-service
     restart: unless-stopped
+    ports:
+      - "3010:3000"
     environment:
       - PORT=3000
-    networks:
-      - proxy
-
-networks:
-  proxy:
-    external: true
