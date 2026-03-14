@@ -38,6 +38,7 @@ const INITIAL_FORM = {
 
 export default function KfzKaufvertrag() {
   const [step, setStep] = useState(0)   // 0 = Start, 1–4 = Wizard
+  const [startChoice, setStartChoice] = useState(null) // null | 'scan'
   const [form, setForm] = useState(INITIAL_FORM)
   const [generating, setGenerating] = useState(false)
   const [pdfError, setPdfError] = useState(null)
@@ -101,8 +102,8 @@ export default function KfzKaufvertrag() {
     <div className="max-w-3xl mx-auto px-4 py-8">
 
       {/* Seitentitel */}
-      <div className="mb-6">
-        <p className="text-xs font-semibold tracking-widest uppercase text-brand-red mb-2">
+      <div className="border-l-4 border-brand-red pl-4 mb-6">
+        <p className="text-xs font-semibold tracking-widest uppercase text-brand-red mb-1">
           Vertrags-Generator
         </p>
         <h1 className="text-2xl sm:text-3xl font-bold text-brand-dark">
@@ -120,17 +121,54 @@ export default function KfzKaufvertrag() {
 
       {/* ── SCHRITT 0: Start ── */}
       {step === 0 && (
-        <div className="card">
-          <p className="section-heading">Wie möchten Sie beginnen?</p>
-          <p className="text-sm text-gray-600 mb-5">
-            Fotografieren Sie den Zulassungsschein – die KI liest die Fahrzeugdaten automatisch aus
-            und füllt das Formular vor.
-          </p>
-          <ScanUpload
-            onScanResult={handleScanResult}
-            onManual={() => setStep(1)}
-          />
-        </div>
+        <>
+          {startChoice === 'scan' ? (
+            <div className="card">
+              <ScanUpload
+                onScanResult={handleScanResult}
+                onManual={() => setStep(1)}
+              />
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Scan-Tile */}
+              <button
+                onClick={() => setStartChoice('scan')}
+                className="text-left bg-white border-2 border-brand-red rounded-lg p-6 hover:shadow-md transition-all duration-150 active:scale-[0.99] cursor-pointer"
+              >
+                <div className="bg-brand-light rounded-full w-12 h-12 flex items-center justify-center text-brand-dark mb-4">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
+                  </svg>
+                </div>
+                <div className="flex items-center gap-2 mb-2">
+                  <p className="font-semibold text-brand-dark">Zulassungsschein scannen</p>
+                  <span className="badge-available">⚡ Empfohlen</span>
+                </div>
+                <p className="text-sm text-gray-500 leading-relaxed">
+                  KI liest alle Fahrzeugdaten automatisch aus – du prüfst kurz und weiter.
+                </p>
+              </button>
+
+              {/* Manuell-Tile */}
+              <button
+                onClick={() => setStep(1)}
+                className="text-left bg-white border border-line rounded-lg p-6 hover:shadow-md hover:border-brand-dark/30 transition-all duration-150 active:scale-[0.99] cursor-pointer"
+              >
+                <div className="bg-gray-100 rounded-full w-12 h-12 flex items-center justify-center text-gray-400 mb-4">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125" />
+                  </svg>
+                </div>
+                <p className="font-semibold text-brand-dark mb-2">Manuell ausfüllen</p>
+                <p className="text-sm text-gray-500 leading-relaxed">
+                  Alle Felder selbst eingeben.
+                </p>
+              </button>
+            </div>
+          )}
+        </>
       )}
 
       {/* ── SCHRITT 1: Fahrzeugdaten ── */}

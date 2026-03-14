@@ -8,11 +8,11 @@ export default function Layout() {
     <div className="min-h-screen flex flex-col bg-surface">
 
       {/* Österreich-Rot Akzentstreifen */}
-      <div className="h-1 bg-brand-red w-full flex-shrink-0" />
+      <div className="h-1.5 bg-brand-red w-full flex-shrink-0" />
 
       {/* Header */}
-      <header className="bg-white border-b border-line shadow-sm flex-shrink-0">
-        <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      <header className="bg-white border-b border-line shadow-md flex-shrink-0">
+        <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between gap-3">
           <Link to="/" className="flex items-center leading-none">
             <span className="text-xl font-bold text-brand-dark tracking-tight">
               vertrag-erstellen
