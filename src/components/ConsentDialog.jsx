@@ -19,14 +19,14 @@ export default function ConsentDialog({ onAccept, onDecline }) {
         {/* Body */}
         <div className="px-5 py-4 space-y-3 text-sm text-gray-700">
           <p>
-            Das Foto Ihres Zulassungsscheins wird zur Texterkennung an die{' '}
-            <strong>Anthropic Claude API</strong> übertragen.
+            Das Foto Ihres Zulassungsscheins wird zur automatischen Texterkennung (OCR) kurz an
+            einen externen Dienst übertragen.
           </p>
 
           <div className="space-y-2">
             {[
               'Das Bild wird nicht dauerhaft gespeichert.',
-              'Keine Verwendung für KI-Training.',
+              'Keine Datenspeicherung nach der Erkennung.',
               'Verarbeitung gemäß DSGVO Art. 6 Abs. 1 lit. a.',
             ].map(text => (
               <div key={text} className="flex items-start gap-2">

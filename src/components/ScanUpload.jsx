@@ -81,7 +81,7 @@ export default function ScanUpload({ onScanResult, onManual }) {
           {scanning ? (
             <>
               <Spinner />
-              KI liest Zulassungsschein…
+              Scannt Zulassungsschein…
             </>
           ) : (
             <>

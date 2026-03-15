@@ -80,7 +80,8 @@ export default function Layout() {
             </div>
 
             <nav className="flex items-center divide-x divide-blue-700 text-xs text-blue-300">
-              <Link to="/datenschutz" className="hover:text-white transition-colors pr-3">Datenschutz</Link>
+              <Link to="/impressum" className="hover:text-white transition-colors pr-3">Impressum</Link>
+              <Link to="/datenschutz" className="hover:text-white transition-colors px-3">Datenschutz</Link>
               <span className="pl-3 text-blue-400">© 2026</span>
             </nav>
           </div>
