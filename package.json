@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "mkdir -p dist && cp index.html dist/ && cp -r public/* dist/ 2>/dev/null; true",
+    "build": "mkdir -p dist && sed \"s|__PDF_API_SECRET__|${PDF_API_SECRET:-}|g\" index.html > dist/index.html && cp -r public/* dist/ 2>/dev/null; true",
     "preview": "vite preview"
   },
   "dependencies": {

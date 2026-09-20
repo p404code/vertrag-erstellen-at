@@ -826,7 +826,7 @@
           formData.kaeufer_signature = sigData.kaeufer;
 
           var pdfUrl = 'https://pdf.vertrag-erstellen.at';
-          var secret = '';
+          var secret = '__PDF_API_SECRET__';
           var res = await fetch(pdfUrl + '/generate-pdf', {
             method: 'POST',
             headers: Object.assign({ 'Content-Type': 'application/json' }, secret ? { Authorization: 'Bearer ' + secret } : {}),
