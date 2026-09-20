@@ -6,3 +6,8 @@ dist
 
 # Local Netlify folder
 .netlify
+
+# Lokale Arbeitsdateien (nicht veroeffentlichen)
+IMG_9779.heic
+Gemini_Generated_Image_*.png
+powered-by-evrobo.html
