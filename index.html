@@ -720,7 +720,7 @@
           try {
             const base64 = await fileToBase64(file);
             const mediaType = file.type || 'image/jpeg';
-            const scanUrl = 'https://n8n.hydrafleet.at/webhook/scan-zulassungsschein';
+            const scanUrl = 'https://n8n.vertrag-erstellen.at/webhook/scan-zulassungsschein';
             const res = await fetch(scanUrl, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -825,7 +825,7 @@
           formData.verkaefer_signature = sigData.verkaefer;
           formData.kaeufer_signature = sigData.kaeufer;
 
-          var pdfUrl = 'https://pdf.hydrafleet.at';
+          var pdfUrl = 'https://pdf.vertrag-erstellen.at';
           var secret = '';
           var res = await fetch(pdfUrl + '/generate-pdf', {
             method: 'POST',
