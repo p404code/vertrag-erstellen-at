@@ -15,7 +15,7 @@ Das Projekt ist ein Lead-Generator für EVROBO (evrobo.dev), eine Software-Autom
 - **Frontend:** React (Vite) mit Tailwind CSS
 - **Deployment:** Netlify (via CLI oder MCP)
 - **PDF-Generierung:** Client-seitig mit @react-pdf/renderer ODER serverseitig mit Puppeteer auf Hetzner (Boyko hat dort bereits einen Server mit Puppeteer-Microservice für den RE-Bot)
-- **AI Zulassungsschein-Scan:** Anthropic Claude API (claude-sonnet-4-20250514) mit Vision — Bild als Base64 senden, JSON zurückbekommen
+- **AI Zulassungsschein-Scan:** Anthropic Claude API (claude-sonnet-5) mit Vision — Bild als Base64 senden, JSON zurückbekommen
 - **Analytics (optional):** Supabase oder Plausible
 - **Kein Login, kein Backend für V1** — alles client-seitig außer der API-Call
 
@@ -294,7 +294,7 @@ export default async function handler(req) {
       "anthropic-version": "2023-06-01"
     },
     body: JSON.stringify({
-      model: "claude-sonnet-4-20250514",
+      model: "claude-sonnet-5",
       max_tokens: 1000,
       messages: [{
         role: "user",
