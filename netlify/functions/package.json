@@ -1,6 +1,0 @@
-{
-  "type": "commonjs",
-  "dependencies": {
-    "@anthropic-ai/sdk": "^0.36.3"
-  }
-}
