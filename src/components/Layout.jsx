@@ -1,9 +1,4 @@
-import { Outlet, Link, useLocation } from 'react-router-dom'
-
-export default function Layout() {
-  const { pathname } = useLocation()
-  const isContractPage = pathname !== '/'
-
+export default function Layout({ children }) {
   return (
     <div className="min-h-screen flex flex-col bg-surface">
 
@@ -13,38 +8,43 @@ export default function Layout() {
       {/* Header */}
       <header className="bg-white border-b border-line shadow-md flex-shrink-0">
         <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between gap-3">
-          <Link to="/" className="flex items-center leading-none">
+          <a href="#" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }} className="flex items-center leading-none flex-shrink-0">
             <span className="text-xl font-bold text-brand-dark tracking-tight">
               vertrag-erstellen
             </span>
             <span className="text-xl font-bold text-brand-red tracking-tight">.at</span>
-          </Link>
+          </a>
 
-          <span className="hidden sm:flex items-center gap-1.5 text-xs font-medium text-brand-dark
-                           bg-brand-light border border-brand-mid/20 px-3 py-1 rounded-full">
+          <nav aria-label="Seitennavigation" className="hidden sm:flex items-center gap-4 text-xs font-medium text-brand-dark">
+            <a href="#so-funktionierts" className="hover:text-brand-red transition-colors">So funktioniert's</a>
+            <a href="#generator" className="hover:text-brand-red transition-colors">Generator</a>
+            <a href="#ratgeber" className="hover:text-brand-red transition-colors">Ratgeber</a>
+            <a href="#faq" className="hover:text-brand-red transition-colors">FAQ</a>
+          </nav>
+
+          <span className="hidden md:flex items-center gap-1.5 text-xs font-medium text-brand-dark
+                           bg-brand-light border border-brand-mid/20 px-3 py-1 rounded-full flex-shrink-0">
             <span>🇦🇹</span>
             Österreichisches Recht
           </span>
         </div>
       </header>
 
-      {/* Disclaimer auf Vertragsseiten */}
-      {isContractPage && (
-        <div className="bg-brand-light border-b border-brand-mid/20 flex-shrink-0">
-          <div className="max-w-3xl mx-auto px-4 py-2 flex items-center gap-2 text-xs text-brand-dark">
-            <svg className="w-3.5 h-3.5 flex-shrink-0 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clipRule="evenodd" />
-            </svg>
-            <span>
-              <strong>Hinweis:</strong> Diese Vorlage ist ein unverbindliches Muster und ersetzt keine Rechtsberatung.
-            </span>
-          </div>
+      {/* Disclaimer */}
+      <div className="bg-brand-light border-b border-brand-mid/20 flex-shrink-0">
+        <div className="max-w-3xl mx-auto px-4 py-2 flex items-center gap-2 text-xs text-brand-dark">
+          <svg className="w-3.5 h-3.5 flex-shrink-0 text-brand-red" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clipRule="evenodd" />
+          </svg>
+          <span>
+            <strong>Hinweis:</strong> Diese Vorlage ist ein unverbindliches Muster und ersetzt keine Rechtsberatung.
+          </span>
         </div>
-      )}
+      </div>
 
       {/* Hauptinhalt */}
       <main className="flex-1">
-        <Outlet />
+        {children}
       </main>
 
       {/* Footer */}
@@ -80,9 +80,9 @@ export default function Layout() {
             </div>
 
             <nav className="flex items-center divide-x divide-blue-700 text-xs text-blue-300">
-              <Link to="/impressum" className="hover:text-white transition-colors pr-3">Impressum</Link>
-              <Link to="/datenschutz" className="hover:text-white transition-colors px-3">Datenschutz</Link>
-              <span className="pl-3 text-blue-400">© 2026</span>
+              <a href="#impressum" className="hover:text-white transition-colors pr-3">Impressum</a>
+              <a href="#datenschutz" className="hover:text-white transition-colors px-3">Datenschutz</a>
+              <span className="pl-3 text-blue-400">&copy; 2026</span>
             </nav>
           </div>
         </div>

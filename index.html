@@ -1,27 +1,78 @@
 <!doctype html>
-<html lang="de">
+<html lang="de-AT">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary SEO -->
-    <title>KFZ Kaufvertrag kostenlos erstellen – vertrag-erstellen.at</title>
-    <meta name="description" content="KFZ Kaufvertrag für Österreich kostenlos und rechtssicher erstellen. Zulassungsschein einscannen, Daten werden automatisch ausgefüllt – PDF in 2 Minuten." />
-    <meta name="keywords" content="KFZ Kaufvertrag Österreich, Auto Kaufvertrag kostenlos, Fahrzeug Kaufvertrag PDF, Zulassungsschein scannen" />
-    <link rel="canonical" href="https://vertrag-erstellen.at/kfz-kaufvertrag" />
+    <title>KFZ Kaufvertrag erstellen – kostenlos als PDF</title>
+    <meta name="description" content="Kostenlosen KFZ-Kaufvertrag für Österreich erstellen. Zulassungsschein abfotografieren, Daten werden automatisch ausgefüllt. PDF sofort downloaden." />
+    <link rel="canonical" href="https://vertrag-erstellen.at" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="KFZ Kaufvertrag kostenlos erstellen – vertrag-erstellen.at" />
-    <meta property="og:description" content="Zulassungsschein fotografieren, Daten werden per KI ausgefüllt – rechtssicherer Kaufvertrag als PDF in 2 Minuten. Kostenlos." />
+    <meta property="og:title" content="KFZ Kaufvertrag erstellen – kostenlos als PDF" />
+    <meta property="og:description" content="Kostenlosen KFZ-Kaufvertrag für Österreich erstellen. Zulassungsschein abfotografieren, Daten werden automatisch ausgefüllt. PDF sofort downloaden." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://vertrag-erstellen.at" />
     <meta property="og:image" content="https://vertrag-erstellen.at/og-image.jpg" />
     <meta property="og:locale" content="de_AT" />
+    <meta property="og:site_name" content="vertrag-erstellen.at" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="KFZ Kaufvertrag kostenlos – vertrag-erstellen.at" />
-    <meta name="twitter:description" content="Zulassungsschein scannen → Kaufvertrag PDF erstellen. Kostenlos, für Österreich." />
+    <meta name="twitter:title" content="KFZ Kaufvertrag erstellen – kostenlos als PDF" />
+    <meta name="twitter:description" content="Zulassungsschein scannen, Kaufvertrag PDF erstellen. Kostenlos, für Österreich." />
+
+    <!-- Schema.org JSON-LD: WebApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "vertrag-erstellen.at – KFZ Kaufvertrag Generator",
+      "url": "https://vertrag-erstellen.at",
+      "description": "Kostenlosen KFZ-Kaufvertrag für Österreich erstellen. Zulassungsschein abfotografieren, Daten werden automatisch ausgefüllt. PDF sofort downloaden.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+      "inLanguage": "de-AT",
+      "creator": { "@type": "Organization", "name": "EVROBO Ltd.", "url": "https://evrobo.dev" }
+    }
+    </script>
+
+    <!-- Schema.org JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was muss in einen KFZ-Kaufvertrag?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ein gültiger KFZ-Kaufvertrag in Österreich muss Namen und Adressen beider Vertragsparteien, eine genaue Fahrzeugbeschreibung (Marke, Modell, Kennzeichen, Fahrgestellnummer), den vereinbarten Kaufpreis, die Zahlungsart, das Übergabedatum sowie Angaben zur Gewährleistung und bekannten Mängeln enthalten." }
+        },
+        {
+          "@type": "Question",
+          "name": "Braucht man einen Notar beim Autoverkauf?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nein. Ein KFZ-Kaufvertrag in Österreich muss nicht notariell beglaubigt werden. Ein schriftlicher Vertrag zwischen Verkäufer und Käufer ist vollkommen ausreichend. Wir empfehlen, zwei Exemplare zu erstellen – je eines für jede Vertragspartei." }
+        },
+        {
+          "@type": "Question",
+          "name": "Was bedeutet Gewährleistungsausschluss?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Beim Privatverkauf zwischen Privatpersonen kann die Gewährleistung gemäß § 929 ABGB vertraglich ausgeschlossen werden. Das bedeutet: Der Käufer akzeptiert das Fahrzeug im bestehenden Zustand. Achtung: Der Ausschluss greift nicht, wenn der Verkäufer Mängel arglistig verschwiegen hat." }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist der Kaufvertrag rechtsgültig?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja. Ein schriftlicher Kaufvertrag zwischen Privatpersonen ist in Österreich rechtsgültig und bindend. Unser Generator erstellt einen Vertrag nach österreichischem Recht (ABGB), der alle wesentlichen Vertragsbestandteile enthält." }
+        },
+        {
+          "@type": "Question",
+          "name": "Muss ich das Auto abmelden?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Der Käufer ist für die Ummeldung des Fahrzeugs zuständig. Die Ummeldung muss innerhalb von einem Monat bei der zuständigen Zulassungsstelle erfolgen." }
+        }
+      ]
+    }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,9 +80,792 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;800&display=swap" rel="stylesheet" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Analytics -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="79dc404f-f6e0-49ff-9149-4ef6f4a64bfc"></script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: { dark: '#1C3A5E', mid: '#2A5298', light: '#EEF3FA', red: '#CC0000' },
+              surface: '#F7F8FA',
+              line: '#D4D9E1',
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      html { -webkit-tap-highlight-color: transparent; scroll-behavior: smooth; }
+      body { background: #F7F8FA; color: #111827; font-family: 'Inter', system-ui, sans-serif; }
+
+      .btn-primary {
+        color: #fff; font-weight: 600; padding: 14px 24px; border-radius: 6px;
+        background: linear-gradient(180deg, #2A5298 0%, #1C3A5E 100%);
+        transition: all 0.15s; touch-action: manipulation; border: none; cursor: pointer;
+      }
+      .btn-primary:hover { background: linear-gradient(180deg, #3060b8 0%, #2A5298 100%); }
+      .btn-primary:active { transform: scale(0.95); }
+      .btn-primary:disabled { opacity: 0.6; cursor: default; }
+
+      .btn-secondary {
+        background: #fff; border: 1px solid #D4D9E1; color: #1C3A5E; font-weight: 600;
+        padding: 12px 20px; border-radius: 6px; transition: all 0.15s; touch-action: manipulation; cursor: pointer;
+      }
+      .btn-secondary:hover { border-color: #1C3A5E; background: #EEF3FA; }
+      .btn-secondary:active { transform: scale(0.95); }
+
+      .input-field {
+        width: 100%; border: 1px solid #D4D9E1; border-radius: 6px; padding: 12px 16px;
+        font-size: 16px; background: #fff; outline: none; transition: all 0.15s;
+      }
+      .input-field:focus { box-shadow: 0 0 0 2px #2A5298; border-color: transparent; }
+      .input-field::placeholder { color: #9CA3AF; }
+
+      .label { display: block; font-size: 11px; font-weight: 600; color: #6B7280; margin-bottom: 4px; letter-spacing: 0.05em; text-transform: uppercase; }
+
+      .card { background: #fff; border: 1px solid #D4D9E1; border-radius: 8px; padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+
+      .section-heading {
+        font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+        color: #1C3A5E; border-left: 4px solid #CC0000; padding-left: 12px; margin-bottom: 16px;
+      }
+
+      .badge-available {
+        font-size: 12px; padding: 2px 8px; border-radius: 4px; font-weight: 500;
+        background: #EEF3FA; color: #1C3A5E; border: 1px solid rgba(42,82,152,0.3);
+      }
+
+      /* EVROBO Badge */
+      .evrobo-btn-dark {
+        display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px 10px 14px;
+        background: #0A0F1C; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px;
+        text-decoration: none; transition: all 0.3s ease; cursor: pointer;
+      }
+      .evrobo-btn-dark:hover { border-color: rgba(139,163,195,0.35); box-shadow: 0 4px 20px rgba(27,58,92,0.3); transform: translateY(-1px); }
+      .evrobo-btn-dark__label { display: flex; flex-direction: column; line-height: 1; }
+      .evrobo-btn-dark__top { font-family: 'Outfit', sans-serif; font-size: 9px; text-transform: uppercase; letter-spacing: 1.8px; color: #6B7A90; margin-bottom: 4px; }
+      .evrobo-btn-dark__brand { font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 800; color: #FFFFFF; letter-spacing: 2px; text-transform: uppercase; }
+
+      /* Spinner */
+      @keyframes spin { to { transform: rotate(360deg); } }
+      .spinner { animation: spin 1s linear infinite; }
+
+      /* Accordion chevron rotation */
+      details[open] > summary .chevron { transform: rotate(180deg); }
+      .chevron { transition: transform 0.2s; }
+
+      /* Summary reset */
+      summary { list-style: none; }
+      summary::-webkit-details-marker { display: none; }
+
+      /* Step connector */
+      .step-connector { height: 2px; width: 32px; margin: 0 4px; flex-shrink: 0; }
+
+      /* Hidden utility */
+      .hidden-el { display: none; }
+    </style>
   </head>
+
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div class="min-h-screen flex flex-col bg-surface">
+
+      <!-- Österreich-Rot Akzentstreifen -->
+      <div class="h-1.5 bg-brand-red w-full flex-shrink-0"></div>
+
+      <!-- Header -->
+      <header class="bg-white border-b border-line shadow-md flex-shrink-0">
+        <div class="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between gap-3">
+          <a href="https://vertrag-erstellen.at" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})" class="flex items-center leading-none flex-shrink-0">
+            <span class="text-xl font-bold text-brand-dark tracking-tight">vertrag-erstellen</span>
+            <span class="text-xl font-bold text-brand-red tracking-tight">.at</span>
+          </a>
+
+          <nav aria-label="Seitennavigation" class="hidden sm:flex items-center gap-4 text-xs font-medium text-brand-dark">
+            <a href="#so-funktionierts" class="hover:text-brand-red transition-colors">So funktioniert's</a>
+            <a href="#generator" class="hover:text-brand-red transition-colors">Generator</a>
+            <a href="#ratgeber" class="hover:text-brand-red transition-colors">Ratgeber</a>
+            <a href="#faq" class="hover:text-brand-red transition-colors">FAQ</a>
+          </nav>
+
+          <span class="hidden md:flex items-center gap-1.5 text-xs font-medium text-brand-dark bg-brand-light border border-brand-mid/20 px-3 py-1 rounded-full flex-shrink-0">
+            <span>🇦🇹</span> Österreichisches Recht
+          </span>
+        </div>
+      </header>
+
+      <!-- Disclaimer -->
+      <div class="bg-brand-light border-b border-brand-mid/20 flex-shrink-0">
+        <div class="max-w-3xl mx-auto px-4 py-2 flex items-center gap-2 text-xs text-brand-dark">
+          <svg class="w-3.5 h-3.5 flex-shrink-0 text-brand-red" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd"/></svg>
+          <span><strong>Hinweis:</strong> Diese Vorlage ist ein unverbindliches Muster und ersetzt keine Rechtsberatung.</span>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <main class="flex-1">
+
+        <!-- ══ HERO ══ -->
+        <div class="bg-white border-b border-line">
+          <div class="max-w-3xl mx-auto px-4 py-10 sm:py-14">
+            <p class="text-xs font-semibold tracking-widest uppercase text-brand-red mb-3">Kostenloser Vertrags-Generator · Österreichisches Recht</p>
+
+            <div class="border-l-4 border-brand-red pl-4 mb-7">
+              <h1 class="text-3xl sm:text-4xl font-bold text-brand-dark leading-tight mb-3">KFZ Kaufvertrag kostenlos erstellen</h1>
+              <p class="text-sm text-gray-600 leading-relaxed max-w-xl">
+                Zulassungsschein fotografieren, alle Fahrzeugdaten werden automatisch erkannt,
+                digital unterschreiben – PDF sofort fertig.
+                <span class="font-semibold text-brand-dark">Kostenlos. Für Österreich.</span>
+              </p>
+            </div>
+
+            <!-- 3-Schritt-Prozess -->
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-0 mb-8">
+              <div class="flex items-center gap-3">
+                <div class="bg-brand-light rounded-full p-2.5 flex-shrink-0 text-brand-dark">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z"/></svg>
+                </div>
+                <div><p class="text-xs font-semibold text-brand-dark leading-tight">Zulassungsschein</p><p class="text-xs text-gray-500">fotografieren</p></div>
+              </div>
+              <svg class="hidden sm:block w-4 h-4 text-brand-red mx-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              <div class="flex items-center gap-3">
+                <div class="bg-brand-light rounded-full p-2.5 flex-shrink-0 text-brand-dark">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>
+                </div>
+                <div><p class="text-xs font-semibold text-brand-dark leading-tight">OCR liest</p><p class="text-xs text-gray-500">alle Daten aus</p></div>
+              </div>
+              <svg class="hidden sm:block w-4 h-4 text-brand-red mx-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              <div class="flex items-center gap-3">
+                <div class="bg-brand-light rounded-full p-2.5 flex-shrink-0 text-brand-dark">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                </div>
+                <div><p class="text-xs font-semibold text-brand-dark leading-tight">Unterschreiben</p><p class="text-xs text-gray-500">&amp; PDF fertig</p></div>
+              </div>
+            </div>
+
+            <a href="#generator" class="btn-primary inline-flex items-center gap-2 no-underline">
+              Jetzt kostenlos erstellen
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- ══ SO FUNKTIONIERT'S ══ -->
+        <section id="so-funktionierts" class="max-w-3xl mx-auto px-4 py-10">
+          <div class="border-b border-line pb-10">
+            <h2 class="text-xl font-bold text-brand-dark mb-4">So funktioniert's – KFZ Kaufvertrag als PDF erstellen</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="bg-white border border-line rounded-lg p-4">
+                <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Früher</p>
+                <ul class="space-y-2.5">
+                  <li class="flex items-start gap-2 text-sm text-gray-400"><svg class="w-4 h-4 text-gray-300 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg><span class="line-through">FIN mühsam ablesen &amp; abtippen</span></li>
+                  <li class="flex items-start gap-2 text-sm text-gray-400"><svg class="w-4 h-4 text-gray-300 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg><span class="line-through">Formular per Hand ausfüllen</span></li>
+                  <li class="flex items-start gap-2 text-sm text-gray-400"><svg class="w-4 h-4 text-gray-300 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg><span class="line-through">Ausdrucken &amp; unterschreiben</span></li>
+                  <li class="flex items-start gap-2 text-sm text-gray-400"><svg class="w-4 h-4 text-gray-300 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg><span class="line-through">Kopie machen &amp; aufbewahren</span></li>
+                </ul>
+              </div>
+              <div class="bg-brand-light border border-brand-mid/20 rounded-lg p-4">
+                <p class="text-xs font-semibold text-brand-dark uppercase tracking-wider mb-3">Mit vertrag-erstellen.at</p>
+                <ul class="space-y-2.5">
+                  <li class="flex items-start gap-2 text-sm text-brand-dark font-medium"><svg class="w-4 h-4 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Einfach fotografieren</li>
+                  <li class="flex items-start gap-2 text-sm text-brand-dark font-medium"><svg class="w-4 h-4 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Automatisch ausgefüllt</li>
+                  <li class="flex items-start gap-2 text-sm text-brand-dark font-medium"><svg class="w-4 h-4 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Digital unterschreiben</li>
+                  <li class="flex items-start gap-2 text-sm text-brand-dark font-medium"><svg class="w-4 h-4 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>PDF sofort am Handy</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══ GENERATOR ══ -->
+        <section id="generator" class="max-w-3xl mx-auto px-4 pb-8">
+
+          <!-- Generator Titel -->
+          <div class="border-l-4 border-brand-red pl-4 mb-6">
+            <p class="text-xs font-semibold tracking-widest uppercase text-brand-red mb-1">Vertrags-Generator</p>
+            <h2 class="text-2xl sm:text-3xl font-bold text-brand-dark">KFZ Kaufvertrag erstellen</h2>
+            <p class="text-sm text-gray-500 mt-1">Kostenlos · Für österreichisches Recht · PDF in 2 Minuten</p>
+          </div>
+
+          <!-- Step Indicator (hidden on step 0) -->
+          <div id="step-indicator" class="flex items-center mb-6 overflow-x-auto pb-2" style="display:none;"></div>
+
+          <!-- STEP 0: Choice -->
+          <div id="step-0">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="choice-tiles">
+              <button onclick="startScan()" class="text-left bg-white border-2 border-brand-red rounded-lg p-6 hover:shadow-md transition-all duration-150 active:scale-[0.99] cursor-pointer">
+                <div class="bg-brand-light rounded-full w-12 h-12 flex items-center justify-center text-brand-dark mb-4">
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z"/></svg>
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                  <p class="font-semibold text-brand-dark">Zulassungsschein scannen</p>
+                  <span class="badge-available">⚡ Empfohlen</span>
+                </div>
+                <p class="text-sm text-gray-500 leading-relaxed">KI liest alle Fahrzeugdaten automatisch aus – du prüfst kurz und weiter.</p>
+              </button>
+              <button onclick="goToStep(1)" class="text-left bg-white border border-line rounded-lg p-6 hover:shadow-md hover:border-brand-dark/30 transition-all duration-150 active:scale-[0.99] cursor-pointer">
+                <div class="bg-gray-100 rounded-full w-12 h-12 flex items-center justify-center text-gray-400 mb-4">
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125"/></svg>
+                </div>
+                <p class="font-semibold text-brand-dark mb-2">Manuell ausfüllen</p>
+                <p class="text-sm text-gray-500 leading-relaxed">Alle Felder selbst eingeben.</p>
+              </button>
+            </div>
+
+            <!-- Scan UI (hidden initially) -->
+            <div id="scan-ui" class="card" style="display:none;">
+              <input type="file" id="scan-file-input" accept="image/*" capture="environment" class="hidden-el" aria-hidden="true" />
+              <div class="space-y-3">
+                <button id="scan-btn" onclick="triggerScanPhoto()" class="btn-primary w-full flex items-center justify-center gap-2 text-base">
+                  <span class="text-xl">📷</span> Zulassungsschein fotografieren
+                </button>
+                <button onclick="goToStep(1)" class="btn-secondary w-full text-base">Manuell ausfüllen</button>
+                <div id="scan-error" style="display:none;" class="bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-sm text-red-700"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Consent Dialog (hidden) -->
+          <div id="consent-dialog" style="display:none;" class="fixed inset-0 bg-black/50 z-50 flex items-end sm:items-center justify-center p-4">
+            <div class="bg-white border border-line rounded-lg w-full max-w-md shadow-xl">
+              <div class="border-b-2 border-brand-red px-5 py-4 flex items-center gap-3">
+                <div class="w-9 h-9 rounded-md bg-brand-light flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-brand-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+                </div>
+                <div>
+                  <h2 class="font-bold text-brand-dark text-base leading-tight">Datenschutz-Hinweis</h2>
+                  <p class="text-xs text-gray-500">Bitte vor dem Scan lesen</p>
+                </div>
+              </div>
+              <div class="px-5 py-4 space-y-3 text-sm text-gray-700">
+                <p>Das Foto Ihres Zulassungsscheins wird zur automatischen Texterkennung (OCR) kurz an einen externen Dienst übertragen.</p>
+                <div class="space-y-2">
+                  <div class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Das Bild wird nicht dauerhaft gespeichert.</span></div>
+                  <div class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Keine Datenspeicherung nach der Erkennung.</span></div>
+                  <div class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Verarbeitung gemäß DSGVO Art. 6 Abs. 1 lit. a.</span></div>
+                </div>
+                <p class="text-xs text-gray-400">Details: <a href="#datenschutz" class="text-brand-mid underline">Datenschutzerklärung</a></p>
+              </div>
+              <div class="px-5 pb-5 flex flex-col gap-2">
+                <button onclick="acceptConsent()" class="btn-primary w-full text-center">Einverstanden – Foto machen</button>
+                <button onclick="declineConsent()" class="text-sm text-gray-500 py-2 text-center hover:text-brand-dark transition-colors cursor-pointer bg-transparent border-none">Abbrechen – manuell ausfüllen</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 1: Fahrzeugdaten -->
+          <div id="step-1" style="display:none;">
+            <div class="card space-y-4">
+              <p class="section-heading">Fahrzeugdaten</p>
+              <div class="grid grid-cols-2 gap-3">
+                <div><label class="label" for="kennzeichen">Kennzeichen</label><input id="kennzeichen" type="text" class="input-field" placeholder="W-12345X" /></div>
+                <div><label class="label" for="erstzulassung">Erstzulassung</label><input id="erstzulassung" type="text" class="input-field" placeholder="MM/JJJJ" /></div>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div><label class="label" for="marke">Marke</label><input id="marke" type="text" class="input-field" placeholder="VW" /></div>
+                <div><label class="label" for="modell">Modell/Typ</label><input id="modell" type="text" class="input-field" placeholder="Golf" /></div>
+              </div>
+              <div><label class="label" for="fin">Fahrgestellnummer (FIN / VIN)</label><input id="fin" type="text" class="input-field" placeholder="WVW..." /></div>
+              <div class="grid grid-cols-2 gap-3">
+                <div><label class="label" for="kraftstoff">Kraftstoff</label><input id="kraftstoff" type="text" class="input-field" placeholder="Benzin" /></div>
+                <div><label class="label" for="farbe">Farbe</label><input id="farbe" type="text" class="input-field" placeholder="Silber" /></div>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div><label class="label" for="leistungKw">Leistung (kW)</label><input id="leistungKw" type="text" inputmode="numeric" class="input-field" placeholder="85" /></div>
+                <div><label class="label" for="kilometerstand">Kilometerstand</label><input id="kilometerstand" type="text" inputmode="numeric" class="input-field" placeholder="85000" /></div>
+              </div>
+              <div class="border-t border-line pt-4 space-y-3">
+                <p class="section-heading">Verkäufer / Zulassungsbesitzer</p>
+                <div><label class="label" for="verkaefer_name">Name / Firmenname</label><input id="verkaefer_name" type="text" class="input-field" placeholder="Max Mustermann oder Musterfirma GmbH" /></div>
+                <div><label class="label" for="verkaefer_adresse">Adresse (Straße, PLZ Ort)</label><input id="verkaefer_adresse" type="text" class="input-field" placeholder="Grillgasse 51/201, 1110 Wien" /></div>
+                <div><label class="label" for="verkaefer_geburtsdatum">Geburtsdatum (bei Privatperson, optional bei Firma)</label><input id="verkaefer_geburtsdatum" type="text" class="input-field" placeholder="TT.MM.JJJJ" /></div>
+              </div>
+              <div class="flex gap-3 pt-2 border-t border-line">
+                <button onclick="goToStep(0)" class="btn-secondary flex-1">← Zurück</button>
+                <button onclick="goToStep(2)" class="btn-primary flex-1">Weiter →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: Käufer & Details -->
+          <div id="step-2" style="display:none;">
+            <div class="card space-y-5">
+              <div>
+                <p class="section-heading">Käufer/in</p>
+                <div class="grid grid-cols-2 gap-3 mb-3">
+                  <div><label class="label" for="kaeufer_vorname">Vorname</label><input id="kaeufer_vorname" type="text" class="input-field" /></div>
+                  <div><label class="label" for="kaeufer_nachname">Nachname</label><input id="kaeufer_nachname" type="text" class="input-field" /></div>
+                </div>
+                <div class="mb-3"><label class="label" for="kaeufer_adresse">Adresse (Straße, PLZ Ort)</label><input id="kaeufer_adresse" type="text" class="input-field" /></div>
+                <div><label class="label" for="kaeufer_geburtsdatum">Geburtsdatum</label><input id="kaeufer_geburtsdatum" type="text" class="input-field" placeholder="TT.MM.JJJJ" /></div>
+              </div>
+              <div class="border-t border-line pt-4 space-y-4">
+                <p class="section-heading">Kaufpreis &amp; Zahlung</p>
+                <div><label class="label" for="kaufpreis">Kaufpreis (EUR)</label><input id="kaufpreis" type="text" inputmode="numeric" class="input-field" placeholder="5000" /></div>
+                <div>
+                  <label class="label" for="zahlungsart">Zahlungsart</label>
+                  <select id="zahlungsart" class="input-field"><option>Barzahlung</option><option>Überweisung</option><option>Barzahlung bei Übergabe</option></select>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                  <div><label class="label" for="uebergabedatum">Übergabedatum</label><input id="uebergabedatum" type="text" class="input-field" placeholder="TT.MM.JJJJ" /></div>
+                  <div><label class="label" for="ort">Ort</label><input id="ort" type="text" class="input-field" placeholder="Wien" /></div>
+                </div>
+                <div class="border-t border-line pt-4">
+                  <p class="text-xs font-semibold tracking-widest uppercase text-brand-dark mb-3">Gewährleistung</p>
+                  <label class="flex items-start gap-3 cursor-pointer p-3 bg-brand-light border border-brand-mid/20 rounded-md">
+                    <input type="checkbox" id="gewaehrleistung" checked class="mt-0.5 h-4 w-4 rounded accent-brand-dark flex-shrink-0" />
+                    <span class="text-sm text-brand-dark">
+                      <strong>Gewährleistung ausschließen</strong>
+                      <span class="block text-xs text-gray-500 mt-0.5 font-normal">Empfohlen bei Privatverkäufen – gemäß § 929 ABGB zulässig</span>
+                    </span>
+                  </label>
+                </div>
+                <div>
+                  <label class="label" for="bekannte_maengel">Bekannte Mängel (optional)</label>
+                  <textarea id="bekannte_maengel" rows="3" class="input-field" style="resize:none;" placeholder="z.B. Kratzer an der Heckstoßstange, Klimaanlage defekt…"></textarea>
+                </div>
+              </div>
+              <div class="flex gap-3 pt-2 border-t border-line">
+                <button onclick="goToStep(1)" class="btn-secondary flex-1">← Zurück</button>
+                <button onclick="goToStep(3)" class="btn-primary flex-1">Weiter →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3: PDF -->
+          <div id="step-3" style="display:none;">
+            <div class="card">
+              <p class="section-heading">Zusammenfassung</p>
+              <div class="divide-y divide-line text-sm mb-5" id="summary-rows"></div>
+
+              <div class="border-t border-line pt-4 space-y-5">
+                <p class="section-heading">Unterschriften</p>
+                <div>
+                  <label class="label">Unterschrift Verkäufer/in</label>
+                  <div class="relative">
+                    <canvas id="sig-verkaefer" style="height:140px;width:100%;touch-action:none;" class="border border-line rounded-lg bg-white w-full cursor-crosshair"></canvas>
+                    <button type="button" onclick="clearSig('verkaefer')" class="absolute top-2 right-2 text-xs text-gray-400 hover:text-brand-dark transition-colors px-2 py-0.5 rounded border border-line bg-white cursor-pointer">Löschen</button>
+                    <p class="text-xs text-gray-400 mt-1">Hier unterschreiben</p>
+                  </div>
+                </div>
+                <div>
+                  <label class="label">Unterschrift Käufer/in</label>
+                  <div class="relative">
+                    <canvas id="sig-kaeufer" style="height:140px;width:100%;touch-action:none;" class="border border-line rounded-lg bg-white w-full cursor-crosshair"></canvas>
+                    <button type="button" onclick="clearSig('kaeufer')" class="absolute top-2 right-2 text-xs text-gray-400 hover:text-brand-dark transition-colors px-2 py-0.5 rounded border border-line bg-white cursor-pointer">Löschen</button>
+                    <p class="text-xs text-gray-400 mt-1">Hier unterschreiben</p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="pdf-error" style="display:none;" class="bg-red-50 border border-red-200 rounded-md px-4 py-3 text-sm text-red-700 mt-4"></div>
+
+              <button id="pdf-btn" onclick="generatePdf()" class="btn-primary w-full flex items-center justify-center gap-2 text-base mt-4">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+                PDF erstellen &amp; herunterladen
+              </button>
+            </div>
+            <button onclick="goToStep(2)" class="text-sm text-gray-500 w-full text-center py-2 hover:text-brand-dark transition-colors mt-4 bg-transparent border-none cursor-pointer">← Zurück zum Bearbeiten</button>
+          </div>
+        </section>
+
+        <!-- ══ SEO TEXTBLOCK ══ -->
+        <div class="max-w-3xl mx-auto px-4 py-12 space-y-10">
+          <article id="ratgeber" class="border-t border-line pt-8">
+            <h2 class="text-xl font-bold text-brand-dark mb-4">KFZ Kaufvertrag in Österreich – alles was Sie wissen müssen</h2>
+            <div class="space-y-3 text-sm text-gray-700 leading-relaxed">
+              <p>Wer in Österreich ein gebrauchtes Auto privat kauft oder verkauft, braucht einen schriftlichen KFZ-Kaufvertrag. Auch wenn mündliche Vereinbarungen grundsätzlich gültig sind, schützt ein sorgfältig ausgefüllter Kaufvertrag beide Seiten vor späteren Streitigkeiten. Mit unserem kostenlosen Generator erstellen Sie in wenigen Minuten einen vollständigen Auto-Kaufvertrag nach österreichischem Recht – als PDF, direkt am Handy.</p>
+              <h3 class="font-semibold text-brand-dark pt-2">Was muss in einen KFZ-Kaufvertrag in Österreich?</h3>
+              <p>Ein rechtsgültiger Kaufvertrag für ein Auto sollte alle wesentlichen Informationen zum Fahrzeug und zu beiden Vertragsparteien enthalten. Dazu gehören: Name und Adresse von Verkäufer und Käufer, eine genaue Fahrzeugbeschreibung mit Marke, Modell, Fahrgestellnummer (FIN) und amtlichem Kennzeichen, der vereinbarte Kaufpreis, die Zahlungsart sowie das Übergabedatum. Ebenfalls wichtig ist eine Regelung zur Gewährleistung und die Angabe bekannter Mängel.</p>
+              <h3 class="font-semibold text-brand-dark pt-2">Gewährleistung vs. Garantie beim Autokauf</h3>
+              <p>Im österreichischen Recht ist die Gewährleistung (§§ 922 ff ABGB) von der Garantie zu unterscheiden. Die Gewährleistung ist gesetzlich geregelt und gilt automatisch – der Verkäufer haftet für Mängel, die zum Zeitpunkt der Übergabe bereits bestanden haben. Beim Privatverkauf zwischen Privatpersonen kann die Gewährleistung gemäß § 929 ABGB jedoch wirksam ausgeschlossen werden. Ein solcher Gewährleistungsausschluss ist nur dann unwirksam, wenn der Verkäufer Mängel arglistig verschwiegen hat.</p>
+              <h3 class="font-semibold text-brand-dark pt-2">Kaufvertrag Auto Vorlage – worauf achten?</h3>
+              <p>Eine gute Kaufvertrag-Vorlage für Österreich berücksichtigt die Besonderheiten des ABGB und enthält vorformulierte Klauseln zu Gewährleistungsausschluss, Eigentumsübertragung und Mängeloffenlegung. Unser kostenloser Auto-Kaufvertrag-PDF-Generator füllt alle relevanten Felder automatisch aus – Sie können den Zulassungsschein einfach abfotografieren, und die Fahrzeugdaten werden per automatischer Texterkennung übernommen. So vermeiden Sie Tippfehler bei der Fahrgestellnummer und sparen sich das mühsame Abtippen.</p>
+              <h3 class="font-semibold text-brand-dark pt-2">Nach dem Kauf: Ummeldung und Versicherung</h3>
+              <p>Nach dem Autokauf muss das Fahrzeug vom Käufer bei der zuständigen Zulassungsstelle umgemeldet werden. Die bestehende KFZ-Haftpflichtversicherung des Verkäufers erlischt mit dem Eigentümerwechsel – der Käufer muss vor der Ummeldung eine eigene Versicherung abschließen. Auch eventuelle NoVA-Pflichten sollten vorab geklärt werden.</p>
+            </div>
+          </article>
+
+          <!-- ══ FAQ ══ -->
+          <section id="faq">
+            <h2 class="text-xl font-bold text-brand-dark mb-4">Häufige Fragen</h2>
+            <div class="space-y-2">
+              <details class="bg-white border border-line rounded-md">
+                <summary class="font-medium cursor-pointer flex justify-between items-center px-4 py-3 text-sm text-brand-dark">Was muss in einen KFZ-Kaufvertrag?<svg class="w-4 h-4 text-gray-400 flex-shrink-0 ml-2 chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+                <p class="px-4 pb-4 pt-1 text-gray-600 text-sm border-t border-line">Ein gültiger KFZ-Kaufvertrag in Österreich muss Namen und Adressen beider Vertragsparteien, eine genaue Fahrzeugbeschreibung (Marke, Modell, Kennzeichen, Fahrgestellnummer), den vereinbarten Kaufpreis, die Zahlungsart, das Übergabedatum sowie Angaben zur Gewährleistung und bekannten Mängeln enthalten.</p>
+              </details>
+              <details class="bg-white border border-line rounded-md">
+                <summary class="font-medium cursor-pointer flex justify-between items-center px-4 py-3 text-sm text-brand-dark">Braucht man einen Notar beim Autoverkauf?<svg class="w-4 h-4 text-gray-400 flex-shrink-0 ml-2 chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+                <p class="px-4 pb-4 pt-1 text-gray-600 text-sm border-t border-line">Nein. Ein KFZ-Kaufvertrag in Österreich muss nicht notariell beglaubigt werden. Ein schriftlicher Vertrag zwischen Verkäufer und Käufer ist vollkommen ausreichend. Wir empfehlen, zwei Exemplare zu erstellen – je eines für jede Vertragspartei.</p>
+              </details>
+              <details class="bg-white border border-line rounded-md">
+                <summary class="font-medium cursor-pointer flex justify-between items-center px-4 py-3 text-sm text-brand-dark">Was bedeutet Gewährleistungsausschluss?<svg class="w-4 h-4 text-gray-400 flex-shrink-0 ml-2 chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+                <p class="px-4 pb-4 pt-1 text-gray-600 text-sm border-t border-line">Beim Privatverkauf zwischen Privatpersonen kann die Gewährleistung gemäß § 929 ABGB vertraglich ausgeschlossen werden. Das bedeutet: Der Käufer akzeptiert das Fahrzeug im bestehenden Zustand. Achtung: Der Ausschluss greift nicht, wenn der Verkäufer Mängel arglistig verschwiegen hat.</p>
+              </details>
+              <details class="bg-white border border-line rounded-md">
+                <summary class="font-medium cursor-pointer flex justify-between items-center px-4 py-3 text-sm text-brand-dark">Ist der Kaufvertrag rechtsgültig?<svg class="w-4 h-4 text-gray-400 flex-shrink-0 ml-2 chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+                <p class="px-4 pb-4 pt-1 text-gray-600 text-sm border-t border-line">Ja. Ein schriftlicher Kaufvertrag zwischen Privatpersonen ist in Österreich rechtsgültig und bindend. Unser Generator erstellt einen Vertrag nach österreichischem Recht (ABGB), der alle wesentlichen Vertragsbestandteile enthält. Für komplexe Sachverhalte empfehlen wir zusätzlich eine Rechtsberatung.</p>
+              </details>
+              <details class="bg-white border border-line rounded-md">
+                <summary class="font-medium cursor-pointer flex justify-between items-center px-4 py-3 text-sm text-brand-dark">Muss ich das Auto abmelden?<svg class="w-4 h-4 text-gray-400 flex-shrink-0 ml-2 chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+                <p class="px-4 pb-4 pt-1 text-gray-600 text-sm border-t border-line">Der Käufer ist für die Ummeldung des Fahrzeugs zuständig. Die Ummeldung muss innerhalb von einem Monat bei der zuständigen Zulassungsstelle erfolgen. Der Verkäufer sollte sich eine Bestätigung der Ummeldung geben lassen oder das Fahrzeug selbst vorab abmelden.</p>
+              </details>
+            </div>
+          </section>
+
+          <!-- ══ IMPRESSUM ══ -->
+          <details id="impressum" class="bg-white border border-line rounded-md group">
+            <summary class="font-semibold cursor-pointer flex justify-between items-center px-5 py-4 text-brand-dark">Impressum<svg class="w-5 h-5 text-gray-400 flex-shrink-0 ml-2 chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-5 pb-5 pt-2 border-t border-line text-sm text-gray-700 space-y-4">
+              <div>
+                <h3 class="font-semibold text-brand-dark mb-2">Angaben gemäß § 5 ECG</h3>
+                <p><strong>EVROBO Ltd.</strong><br/>Rechtsform: Gesellschaft mit beschränkter Haftung<br/>Georg-Washington-Straße 13<br/>1000 Sofia, Bulgarien</p>
+                <p class="mt-2">E-Mail: <a href="mailto:office@evrobo.dev" class="text-brand-mid">office@evrobo.dev</a><br/>Web: <a href="https://evrobo.dev" class="text-brand-mid" target="_blank" rel="noopener noreferrer">evrobo.dev</a></p>
+                <p class="mt-2">Unternehmensgegenstand: Softwareentwicklung und digitale Automatisierung</p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-brand-dark mb-2">Haftungsausschluss</h3>
+                <p>Die auf vertrag-erstellen.at bereitgestellten Vertragsvorlagen sind unverbindliche Muster und ersetzen keine individuelle Rechtsberatung. Für die Richtigkeit und Vollständigkeit der Vorlagen wird keine Haftung übernommen. Bei rechtlich relevanten Fragen empfehlen wir die Konsultation eines Rechtsanwalts.</p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-brand-dark mb-2">EU-Streitschlichtung</h3>
+                <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit: <a href="https://ec.europa.eu/consumers/odr" class="text-brand-mid" target="_blank" rel="noopener noreferrer">ec.europa.eu/consumers/odr</a></p>
+              </div>
+            </div>
+          </details>
+
+          <!-- ══ DATENSCHUTZ ══ -->
+          <details id="datenschutz" class="bg-white border border-line rounded-md group">
+            <summary class="font-semibold cursor-pointer flex justify-between items-center px-5 py-4 text-brand-dark">Datenschutzerklärung<svg class="w-5 h-5 text-gray-400 flex-shrink-0 ml-2 chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-5 pb-5 pt-2 border-t border-line text-sm text-gray-700 space-y-4">
+              <div>
+                <h3 class="font-semibold text-brand-dark mb-2">1. Verantwortlicher</h3>
+                <p>EVROBO Ltd., Georg-Washington-Straße 13, 1000 Sofia, Bulgarien<br/>Kontakt: <a href="mailto:office@evrobo.dev" class="text-brand-mid">office@evrobo.dev</a></p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-brand-dark mb-2">2. Datenverarbeitung</h3>
+                <p class="mb-2">Zur Nutzung dieses Dienstes sind <strong>keine Registrierung und kein Login</strong> erforderlich. Alle eingegebenen Formulardaten werden ausschließlich lokal in Ihrem Browser verarbeitet und nach der PDF-Erstellung nicht gespeichert.</p>
+                <p>Bei Nutzung der optionalen Foto-Scan-Funktion wird das aufgenommene Bild zur automatischen Texterkennung (OCR) kurz an einen externen Dienst übermittelt und danach gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).</p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-brand-dark mb-2">3. Hosting</h3>
+                <p>Diese Website wird über einen externen Hosting-Anbieter bereitgestellt. Beim Aufruf werden technische Zugriffsdaten (IP-Adresse, Datum/Uhrzeit) protokolliert.</p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-brand-dark mb-2">4. Ihre Rechte</h3>
+                <p>Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer Daten. Da keine personenbezogenen Daten dauerhaft gespeichert werden, sind diese Rechte technisch bereits durch das System gewährleistet.</p>
+                <p class="mt-2">Anfragen: <a href="mailto:office@evrobo.dev" class="text-brand-mid">office@evrobo.dev</a> · Beschwerde: <a href="https://www.dsb.gv.at" class="text-brand-mid" target="_blank" rel="noopener noreferrer">dsb.gv.at</a></p>
+              </div>
+              <p class="text-xs text-gray-400 pt-2">Stand: März 2026</p>
+            </div>
+          </details>
+        </div>
+
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-brand-dark text-white mt-16">
+        <div class="max-w-3xl mx-auto px-4 py-8">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <div class="flex items-center mb-2">
+                <span class="font-bold text-white">vertrag-erstellen</span>
+                <span class="font-bold text-brand-red">.at</span>
+              </div>
+              <p class="text-xs text-blue-200 mb-4">Ein Projekt gebaut, deployt und</p>
+              <a href="https://evrobo.dev" target="_blank" rel="noopener noreferrer" class="evrobo-btn-dark">
+                <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,2 93,27 93,73 50,98 7,73 7,27" fill="#8A9BB5" opacity="0.7"/><polygon points="50,8 88,30 88,70 50,92 12,70 12,30" fill="#7B8FA8"/><polygon points="50,92 12,70 12,55 50,77 88,55 88,70" fill="#1B3A5C"/><path d="M38,35 L58,35 L58,42 L46,42 L46,46 L56,46 L56,53 L46,53 L46,57 L58,57 L58,64 L38,64 Z" fill="white" opacity="0.9"/><path d="M52,44 L65,50 L52,56 Z" fill="white" opacity="0.85"/></svg>
+                <span class="evrobo-btn-dark__label"><span class="evrobo-btn-dark__top">Powered by</span><span class="evrobo-btn-dark__brand">EVROBO</span></span>
+              </a>
+            </div>
+            <nav class="flex items-center divide-x divide-blue-700 text-xs text-blue-300">
+              <a href="#impressum" class="hover:text-white transition-colors pr-3">Impressum</a>
+              <a href="#datenschutz" class="hover:text-white transition-colors px-3">Datenschutz</a>
+              <span class="pl-3 text-blue-400">&copy; 2026</span>
+            </nav>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Signature Pad Library -->
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@5.0.4/dist/signature_pad.umd.min.js"></script>
+
+    <!-- App Logic -->
+    <script>
+      // ── State ──
+      let currentStep = 0;
+      const sigPads = {};
+      const sigData = { verkaefer: '', kaeufer: '' };
+
+      // ── Form field IDs ──
+      const FIELDS = [
+        'kennzeichen','erstzulassung','marke','modell','fin','kraftstoff','farbe',
+        'leistungKw','kilometerstand','verkaefer_name','verkaefer_adresse','verkaefer_geburtsdatum',
+        'kaeufer_vorname','kaeufer_nachname','kaeufer_adresse','kaeufer_geburtsdatum',
+        'kaufpreis','zahlungsart','uebergabedatum','ort'
+      ];
+
+      // ── Step Navigation ──
+      function goToStep(n) {
+        // Hide all steps
+        for (let i = 0; i <= 3; i++) {
+          const el = document.getElementById('step-' + i);
+          if (el) el.style.display = 'none';
+        }
+
+        // Show target step
+        const target = document.getElementById('step-' + n);
+        if (target) target.style.display = '';
+
+        currentStep = n;
+
+        // Step indicator
+        const indicator = document.getElementById('step-indicator');
+        if (n >= 1) {
+          indicator.style.display = '';
+          renderStepIndicator(n);
+        } else {
+          indicator.style.display = 'none';
+        }
+
+        // On step 0, reset to choice tiles
+        if (n === 0) {
+          document.getElementById('choice-tiles').style.display = '';
+          document.getElementById('scan-ui').style.display = 'none';
+        }
+
+        // On step 3, render summary and init signature pads
+        if (n === 3) {
+          renderSummary();
+          setTimeout(initSignaturePads, 50);
+        }
+
+        // Scroll to generator
+        document.getElementById('generator').scrollIntoView({ behavior: 'smooth' });
+      }
+
+      function renderStepIndicator(current) {
+        const steps = [
+          { label: 'Fahrzeug & Verkäufer' },
+          { label: 'Käufer & Details' },
+          { label: 'PDF' },
+        ];
+        const indicator = document.getElementById('step-indicator');
+        let html = '';
+        steps.forEach((s, i) => {
+          const num = i + 1;
+          const done = current > num;
+          const active = current === num;
+          let circleClass = 'w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold border-2 transition-all ';
+          if (done) circleClass += 'bg-brand-red border-brand-red text-white';
+          else if (active) circleClass += 'bg-brand-dark border-brand-dark text-white';
+          else circleClass += 'bg-white border-line text-gray-400';
+
+          const labelClass = 'text-xs mt-1 font-medium whitespace-nowrap ' + (active ? 'text-brand-dark' : 'text-gray-400');
+          const checkSvg = '<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>';
+
+          html += '<div class="flex items-center flex-shrink-0"><div class="flex flex-col items-center">';
+          html += '<div class="' + circleClass + '">' + (done ? checkSvg : num) + '</div>';
+          html += '<span class="' + labelClass + '">' + s.label + '</span>';
+          html += '</div>';
+          if (i < steps.length - 1) {
+            html += '<div class="step-connector mb-5 ' + (current > num ? 'bg-brand-red' : 'bg-line') + '" style="width:32px;margin:0 4px;"></div>';
+          }
+          html += '</div>';
+        });
+        indicator.innerHTML = html;
+      }
+
+      // ── Scan Flow ──
+      function startScan() {
+        document.getElementById('choice-tiles').style.display = 'none';
+        document.getElementById('scan-ui').style.display = '';
+        document.getElementById('consent-dialog').style.display = 'flex';
+      }
+
+      function acceptConsent() {
+        document.getElementById('consent-dialog').style.display = 'none';
+        document.getElementById('scan-file-input').click();
+      }
+
+      function declineConsent() {
+        document.getElementById('consent-dialog').style.display = 'none';
+        goToStep(1);
+      }
+
+      function triggerScanPhoto() {
+        document.getElementById('consent-dialog').style.display = 'flex';
+      }
+
+      // File input handler
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('scan-file-input').addEventListener('change', async function(e) {
+          const file = e.target.files && e.target.files[0];
+          if (!file) return;
+
+          const btn = document.getElementById('scan-btn');
+          const errEl = document.getElementById('scan-error');
+          btn.disabled = true;
+          btn.innerHTML = '<svg class="spinner h-5 w-5 text-white" viewBox="0 0 24 24" fill="none"><circle opacity="0.25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path opacity="0.75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg> Scannt Zulassungsschein…';
+          errEl.style.display = 'none';
+
+          try {
+            const base64 = await fileToBase64(file);
+            const mediaType = file.type || 'image/jpeg';
+            const scanUrl = 'https://n8n.hydrafleet.at/webhook/scan-zulassungsschein';
+            const res = await fetch(scanUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ imageBase64: base64, mediaType: mediaType }),
+            });
+            if (!res.ok) throw new Error('Scan fehlgeschlagen');
+            const data = await res.json();
+            if (data.error) throw new Error(data.error);
+
+            // Fill form fields from scan
+            const map = {
+              kennzeichen: data.kennzeichen, marke: data.marke, modell: data.modell,
+              fin: data.fin, erstzulassung: data.erstzulassung, kraftstoff: data.kraftstoff,
+              farbe: data.farbe, leistungKw: data.leistungKw,
+              verkaefer_name: data.besitzer_name, verkaefer_adresse: data.besitzer_adresse
+            };
+            Object.entries(map).forEach(function(pair) {
+              if (pair[1]) {
+                var el = document.getElementById(pair[0]);
+                if (el) el.value = pair[1];
+              }
+            });
+            goToStep(1);
+          } catch (err) {
+            errEl.textContent = err.message || 'Scan fehlgeschlagen. Bitte manuell ausfüllen.';
+            errEl.innerHTML += '<br/><button onclick="goToStep(1)" class="mt-2 text-red-600 underline font-medium cursor-pointer bg-transparent border-none">Weiter zum manuellen Formular</button>';
+            errEl.style.display = '';
+          } finally {
+            btn.disabled = false;
+            btn.innerHTML = '<span class="text-xl">📷</span> Zulassungsschein fotografieren';
+            e.target.value = '';
+          }
+        });
+      });
+
+      function fileToBase64(file) {
+        return new Promise(function(resolve, reject) {
+          var reader = new FileReader();
+          reader.onload = function() { resolve(reader.result.split(',')[1]); };
+          reader.onerror = reject;
+          reader.readAsDataURL(file);
+        });
+      }
+
+      // ── Summary ──
+      function getVal(id) { var el = document.getElementById(id); return el ? el.value : ''; }
+
+      function renderSummary() {
+        const rows = [
+          ['Fahrzeug', (getVal('marke') + ' ' + getVal('modell')).trim() || '–'],
+          ['Kennzeichen', getVal('kennzeichen') || '–'],
+          ['Kaufpreis', getVal('kaufpreis') ? 'EUR ' + getVal('kaufpreis') + ',–' : '–'],
+          ['Übergabe', getVal('uebergabedatum') || '–'],
+          ['Gewährleistung', document.getElementById('gewaehrleistung').checked ? 'Ausgeschlossen (§ 929 ABGB)' : 'Gesetzlich'],
+        ];
+        const el = document.getElementById('summary-rows');
+        el.innerHTML = rows.map(function(r) {
+          return '<div class="flex justify-between py-2.5"><span class="text-gray-500">' + r[0] + '</span><span class="font-medium text-brand-dark text-right">' + r[1] + '</span></div>';
+        }).join('');
+      }
+
+      // ── Signature Pads ──
+      function initSignaturePads() {
+        ['verkaefer', 'kaeufer'].forEach(function(who) {
+          var canvas = document.getElementById('sig-' + who);
+          if (!canvas) return;
+          var ratio = Math.max(window.devicePixelRatio || 1, 1);
+          var width = canvas.offsetWidth;
+          canvas.width = width * ratio;
+          canvas.height = 140 * ratio;
+          canvas.getContext('2d').scale(ratio, ratio);
+
+          if (sigPads[who]) { sigPads[who].off(); }
+          sigPads[who] = new SignaturePad(canvas, { penColor: '#1C3A5E', backgroundColor: 'rgba(0,0,0,0)' });
+          sigPads[who].addEventListener('endStroke', function() {
+            if (!sigPads[who].isEmpty()) {
+              sigData[who] = sigPads[who].toDataURL('image/png');
+            }
+          });
+        });
+      }
+
+      function clearSig(who) {
+        if (sigPads[who]) { sigPads[who].clear(); }
+        sigData[who] = '';
+      }
+
+      // ── PDF Generation ──
+      async function generatePdf() {
+        const btn = document.getElementById('pdf-btn');
+        const errEl = document.getElementById('pdf-error');
+        btn.disabled = true;
+        btn.innerHTML = '<svg class="spinner h-5 w-5 text-white" viewBox="0 0 24 24" fill="none"><circle opacity="0.25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path opacity="0.75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg> PDF wird erstellt…';
+        errEl.style.display = 'none';
+
+        try {
+          var formData = {};
+          FIELDS.forEach(function(id) { formData[id] = getVal(id); });
+          formData['gewährleistung_ausgeschlossen'] = document.getElementById('gewaehrleistung').checked;
+          formData.bekannte_maengel = getVal('bekannte_maengel');
+          formData.datum = new Date().toLocaleDateString('de-AT');
+          formData.verkaefer_signature = sigData.verkaefer;
+          formData.kaeufer_signature = sigData.kaeufer;
+
+          var pdfUrl = 'https://pdf.hydrafleet.at';
+          var secret = '';
+          var res = await fetch(pdfUrl + '/generate-pdf', {
+            method: 'POST',
+            headers: Object.assign({ 'Content-Type': 'application/json' }, secret ? { Authorization: 'Bearer ' + secret } : {}),
+            body: JSON.stringify(formData),
+          });
+          if (!res.ok) throw new Error('PDF-Generierung fehlgeschlagen');
+          var blob = await res.blob();
+          var url = URL.createObjectURL(blob);
+          var filename = 'KFZ-Kaufvertrag-' + (formData.kennzeichen || 'Fahrzeug') + '.pdf';
+
+          if (navigator.canShare && navigator.canShare({ files: [new File([blob], filename, { type: 'application/pdf' })] })) {
+            await navigator.share({ files: [new File([blob], filename, { type: 'application/pdf' })], title: 'KFZ Kaufvertrag' });
+          } else {
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+          }
+          URL.revokeObjectURL(url);
+        } catch (err) {
+          errEl.textContent = err.message;
+          errEl.style.display = '';
+        } finally {
+          btn.disabled = false;
+          btn.innerHTML = '<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg> PDF erstellen &amp; herunterladen';
+        }
+      }
+
+      // ── Handle hash navigation (open accordion on anchor click) ──
+      function handleHash() {
+        var hash = window.location.hash;
+        if (hash) {
+          var el = document.querySelector(hash);
+          if (el && el.tagName === 'DETAILS') { el.open = true; }
+          if (el) { setTimeout(function() { el.scrollIntoView({ behavior: 'smooth' }); }, 100); }
+        }
+      }
+      window.addEventListener('hashchange', handleHash);
+      document.addEventListener('DOMContentLoaded', handleHash);
+    </script>
   </body>
 </html>
